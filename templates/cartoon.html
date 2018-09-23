@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/basestyle.css'%}">
+{% for c in carmodel %}
+<div class="htmlclasswork">
+<div class='video-container'><iframe width="560" height="315" src={{c.cartoonurl}}
+ frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+ <h1 class="h2videotitle">{{c.cartoonvideo}}</h1>
+<button><details>
+  <summary>DETAIL'S</summary>
+  <h1 class="h5videodetail"> {{c.cardetails}}</h1>
+</details></button>
+ </div>
+ {% endfor %}
+ {% endblock %}

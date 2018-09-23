@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="topnav">
+  <a style="text-decoration:none"  href="{% url 'hollywoodpage' %}">Hollywood</a>
+  <a style="text-decoration:none" href="{% url 'bollywoodpage' %}">Bollywood</a>
+  <a style="text-decoration:none" href="{% url 'cartoonpage' %}">Cartoon</a>
+</div>
+<link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+
+{% for c in videos %}
+
+<!--Main class that contail all main content.........................-->
+<div class="htmlclasswork">
+  <h1 class="h2videotitle">{{c.videotitle}}</h1>
+<div class='video-container'><iframe width="560" height="315" src={{c.videourl}}
+ frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+ <div class="h1detail">
+ <center>
+<button><details>
+  <summary>DETAIL'S</summary>
+  <h1 class="h5videodetail"> {{c.details}}</h1>
+</details></button></center>
+ </div>
+ </div>
+<!--End Main class.......................................-->
+ {% endfor %}
+ {% endblock %}
